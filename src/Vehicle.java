@@ -18,26 +18,30 @@ public abstract class Vehicle implements MoveAble {
     public abstract double costPer100Km();
 
 
-
-
     public static void main(String[] args) {
         Vehicle[] vehicles = {new Car("Subaru", 2015), new Car("Toyota", 2013),
                 new ElectricScooter("xiomi", 2022), new ElectricScooter("Sumsung", 2023),
                 new Bike("Trek", 2020), new Bike("Marida", 2022)};
-int sumOfEfficiencyScore = 0;
-Vehicle min = vehicles[0];
-        for (Vehicle vehicle : vehicles){
-            vehicle.displayInfo();vehicle.fuelType();vehicle.move();
-            System.out.println("Efficiency: " + vehicle.efficiencyScore());
 
+        int sumOfEfficiencyScore = 0;
+        Vehicle min = vehicles[0];
+
+        for (Vehicle vehicle : vehicles) {
+            vehicle.displayInfo();
+            vehicle.fuelType();
+            vehicle.move();
+            System.out.println("Efficiency: " + vehicle.efficiencyScore());
             System.out.println("Cost per 100 km: " + vehicle.costPer100Km());
+
             System.out.println();
-            sumOfEfficiencyScore+= vehicle.efficiencyScore();
-            min = vehicle.costPer100Km()<min.costPer100Km() ? vehicle : min;
+
+            sumOfEfficiencyScore += vehicle.efficiencyScore();
+            min = vehicle.costPer100Km() < min.costPer100Km() ? vehicle : min;
         }
-        System.out.println("sumOfEfficiencyScore: "+((double)(sumOfEfficiencyScore/vehicles.length)));
+
+        System.out.println("sumOfEfficiencyScore: " + ((double) (sumOfEfficiencyScore / vehicles.length)));
         System.out.println();
-        System.out.println("Min costPer100Km vehicle: "+min.model+" - "+min.year+"\n costPer100Km: "+min.costPer100Km());
+        System.out.println("Min costPer100Km vehicle: " + min.model + " - " + min.year + "\n costPer100Km: " + min.costPer100Km());
     }
 }
 
@@ -119,6 +123,6 @@ class Bike extends Vehicle {
     }
 }
 
-
+/*Thanks a lot*/
 
 
