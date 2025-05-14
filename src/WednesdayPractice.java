@@ -181,4 +181,13 @@ double num = in.nextDouble();
         System.out.println(ascii);
         System.out.println((char) (asciiCode+32));
     }
+
+    /* Exercise 3*/
+
+    static  void printArray(){
+        int[] arr = {3,4,9,87,};
+        for (int current : arr){
+            System.out.println(current);
+        }
+    }
 }
