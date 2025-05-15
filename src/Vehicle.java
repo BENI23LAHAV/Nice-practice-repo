@@ -123,6 +123,12 @@ class Bike extends Vehicle {
     }
 }
 
+interface test extends MoveAble{}
+interface A{}
+interface B{}
+
+interface C extends A,B{}
+
 /*Thanks a lot*/
 
 
